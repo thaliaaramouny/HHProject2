@@ -3,7 +3,9 @@ package package_game;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,20 +13,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
-public class gui implements ActionListener 
+public class GUI implements ActionListener 
 {
 
 	JFrame window;
 	JPanel titleScreen, startButtonScreen, textPanel, choicePanel, statsPanel;
 	JLabel title, timerLabel, timerCount, healthLabel, healthCount;
-	JButton startButton;
-	JRadioButton move1, move2;
+	JButton startButton, move1, move2;
 	ButtonGroup bg1;
 	JTextArea textArea;
 	Font titleFont, headerFont, buttonFont;
 	Font textFont, textFont1;
-    TextField text = new TextField(20);
+    JTextField text = new JTextField(20);
     Image hh;
 
 	
@@ -151,15 +153,15 @@ public class gui implements ActionListener
 		choicePanel.setVisible(false);
 		window.add(choicePanel);
 		
-		//creating JRadioButtons
-		//RADIO BUTTON 1
-		move1 = new JRadioButton("Enter the house.");
+		//creating buttons for player moves
+		// BUTTON 1
+		move1 = new JButton("Enter the house.");
 		move1.setFont(buttonFont);
 		move1.setForeground(Color.red);
 		choicePanel.add(move1);
 		
 		//RADIO BUTTON 2
-		move2 = new JRadioButton("Turn around and leave.");
+		move2 = new JButton("Turn around and leave.");
 		move2.setFont(buttonFont);
 		move2.setForeground(Color.white);
 		choicePanel.add(move2);
@@ -185,8 +187,6 @@ public class gui implements ActionListener
 		    window.add(textPanel);
 		    window.add(choicePanel);
 		    window.validate();
-		   {
-		   }
 		   }
 }
 			
