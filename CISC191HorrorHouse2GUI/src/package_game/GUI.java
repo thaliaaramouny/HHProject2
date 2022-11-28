@@ -12,8 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
-public class GUI
+public class gui implements ActionListener 
 {
+
 	JFrame window;
 	JPanel titleScreen, startButtonScreen, textPanel, choicePanel, statsPanel;
 	JLabel title, timerLabel, timerCount, healthLabel, healthCount;
@@ -23,6 +24,9 @@ public class GUI
 	JTextArea textArea;
 	Font titleFont, headerFont, buttonFont;
 	Font textFont, textFont1;
+    TextField text = new TextField(20);
+    Image hh;
+
 	
 	public void createGUI() 
 	{
@@ -44,6 +48,40 @@ public class GUI
 		
 		//setting layout of window
 		window.setLayout(null);
+	
+		/////Creating stats panel////
+		statsPanel = new JPanel();
+		statsPanel.setBounds(100,15,600,50);
+		statsPanel.setBackground(Color.black);
+		statsPanel.setLayout(new GridLayout(1,4));
+		window.add(statsPanel);
+		
+		//creating timer labels and health labels
+		//creating timer label
+		timerLabel = new JLabel("Timer: ");
+		timerLabel.setFont(headerFont);
+		timerLabel.setForeground(Color.white);
+		statsPanel.add(timerLabel);
+		
+		//to display timer count after timerlabel:
+		timerCount = new JLabel();		
+		timerCount.setFont(headerFont);
+		timerCount.setForeground(Color.white);
+		statsPanel.add(timerCount);
+		
+		//creating health label 
+		healthLabel = new JLabel("Health: ");
+		healthLabel.setFont(headerFont);
+		healthLabel.setForeground(Color.white);
+		statsPanel.add(healthLabel);
+		//to display health value after label:
+		healthCount = new JLabel();
+		healthCount.setFont(headerFont);
+		healthCount.setForeground(Color.white);
+		statsPanel.add(healthCount);
+		
+		//making window visible
+		window.setVisible(true);
 		
 		///// Title Screen /////
 		titleScreen = new JPanel();
@@ -73,18 +111,12 @@ public class GUI
 		
 		//adding button to buttonScreen
 		startButtonScreen.add(startButton);
+		
 		//adding title panel and start button panel to window
 		window.add(titleScreen);
 		window.add(startButtonScreen);
-		
-		/*
-		 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		 * COMMENT OUT BOTTOM CODE TO SEE TITLE SCREEN.
-		 * COMMENT OUT TOP CODE TO SEE GAME SCREEN.
-		 * BUTTON HANDLER NOT CREATED, 
-		 * SO TITLE SCREEN AND GAME SCREEN NOT CONNECTED YET.
-		 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		 */
+		startButton.addActionListener(this);
+	
 		
 		//////creating GAME SCREEN//////
 		headerFont = new Font("Times New Roman", Font.BOLD, 21);
@@ -109,62 +141,52 @@ public class GUI
 		textArea.setWrapStyleWord(true);
 		textArea.setEditable(false);
 		textPanel.add(textArea);
+		textPanel.setVisible(false);
 		
 		//creating the button panel
 		choicePanel = new JPanel();
 		choicePanel.setBounds(250,350, 300, 150);
 		choicePanel.setBackground(Color.black);
 		choicePanel.setLayout(new GridLayout(4,1));
+		choicePanel.setVisible(false);
 		window.add(choicePanel);
 		
 		//creating JRadioButtons
 		//RADIO BUTTON 1
 		move1 = new JRadioButton("Enter the house.");
 		move1.setFont(buttonFont);
+		move1.setForeground(Color.red);
 		choicePanel.add(move1);
 		
 		//RADIO BUTTON 2
 		move2 = new JRadioButton("Turn around and leave.");
 		move2.setFont(buttonFont);
+		move2.setForeground(Color.white);
 		choicePanel.add(move2);
+		
+		//adding ActionListener to buttons
+		move1.addActionListener(this);
+		move2.addActionListener(this);
 		
 		//creating ButtonGroup for JRadioButtons
 		bg1 = new ButtonGroup();
 		bg1.add(move1);
-		bg1.add(move1);
+		bg1.add(move2);
 		
-		/////Creating stats panel////
-		statsPanel = new JPanel();
-		statsPanel.setBounds(100,15,600,50);
-		statsPanel.setBackground(Color.black);
-		statsPanel.setLayout(new GridLayout(1,4));
-		window.add(statsPanel);
-		
-		//creating timer labels and health labels
-		//creating timer label
-		timerLabel = new JLabel("Timer: ");
-		timerLabel.setFont(headerFont);
-		timerLabel.setForeground(Color.white);
-		statsPanel.add(timerLabel);
-		//to display timer count after timerlabel:
-		timerCount = new JLabel();		
-		timerCount.setFont(headerFont);
-		timerCount.setForeground(Color.white);
-		statsPanel.add(timerCount);
-		
-		//creating health label 
-		healthLabel = new JLabel("Health: ");
-		healthLabel.setFont(headerFont);
-		healthLabel.setForeground(Color.white);
-		statsPanel.add(healthLabel);
-		//to display health value after label:
-		healthCount = new JLabel();
-		healthCount.setFont(headerFont);
-		healthCount.setForeground(Color.white);
-		statsPanel.add(healthCount);
-		
-		//making window visible
-		window.setVisible(true);
 	}
-
+		
+		//EventHandler for start button
+		@Override
+		   public void actionPerformed(ActionEvent start)
+		   {
+			textPanel.setVisible(true);
+			choicePanel.setVisible(true);
+		    window.remove(startButtonScreen);
+		    window.add(textPanel);
+		    window.add(choicePanel);
+		    window.validate();
+		   {
+		   }
+		   }
 }
+			
