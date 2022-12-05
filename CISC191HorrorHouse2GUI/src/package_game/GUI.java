@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 
 import java.text.DecimalFormat;//new
 import java.sql.Time;//new
@@ -36,8 +37,10 @@ public class GUI
 //this is all for the Timer
 	Timer timer;
     int second, minute;
-    String ddSecond, ddMinute;
+    //these are the names of string
+    String stringSecond, stringMinute;
     DecimalFormat dFormat = new DecimalFormat("00");
+    
     ButtonListener BL = new ButtonListener();
 	
 	public void createGUI() 
@@ -47,7 +50,7 @@ public class GUI
 		
 		//size of window
 		final int WINDOW_WIDTH = 880;
-		final int WINDOW_HEIGHT = 880;
+		final int WINDOW_HEIGHT = 820;
 	
 		// set the size of frame/window
 		window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -83,16 +86,17 @@ public class GUI
 		timerCount.setForeground(Color.white);
 		statsPanel.add(timerCount);
 		
+		
 		/////IMAGES/////
 		//Start screen image
 		img1 = new JLabel();
-		img1.setIcon(new ImageIcon("image/hh.png"));
+		img1.setIcon(new ImageIcon("hh.png"));
 		//Door image
 		img2 = new JLabel();
-		img2.setIcon(new ImageIcon("image/hhDoor.png"));
+		img2.setIcon(new ImageIcon("hhDoor.png"));
 		//LR image
 		img3 = new JLabel();
-		img3.setIcon(new ImageIcon("image/lr.png"));
+		img3.setIcon(new ImageIcon("lr.png"));
 		
 		//image panel1
 		imagePanel= new JPanel();
@@ -190,14 +194,55 @@ public class GUI
 		
 	}
 	
+	
+
+	
 	//button listener for all buttons
 	private class ButtonListener implements ActionListener
 	{
+///////////////////////////////////////////////////////////////////
+		
+		public void countdownTimer() 
+		{
+		//(update every 1 sec,)
+		timer = new Timer(1000, new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				second--;
+				stringSecond = dFormat.format(second);
+				stringMinute = dFormat.format(minute);
+				timerCount.setText(stringMinute +":"+stringSecond);
+				
+				if(second == -1) 
+				{
+					second = 59;
+					minute--;
+					stringSecond = dFormat.format(second);
+					stringMinute = dFormat.format(minute);
+					timerCount.setText(stringMinute +":"+stringSecond);
+				}
+				
+				if(minute==0 && second==0) 
+				{
+					timer.stop();
+				}
+			}
+		}
+		
+		); // <- sad winky face 
+
+		}
+		
+///////////////////////////////////////////////////////////////////
+
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
 			if (e.getSource() == startButton) 
 			{
+				countdownTimer();//new
+				timer.start();//new
 				window.remove(centerPanel);
 				window.add(imagePanel);
 				startButton.setVisible(false);
@@ -274,34 +319,5 @@ public class GUI
 	
 	}
 
-			public void countdownTimer() 
-			{
-			//(update every 1 sec,)
-			timer = new Timer(1000, new ActionListener() 
-			{
-				public void actionPerformed(ActionEvent e) 
-				{
-					second--;
-					ddSecond = dFormat.format(second);
-					ddMinute = dFormat.format(minute);
-					timerCount.setText(ddMinute +":"+ddSecond);
-					
-					if(second == -1) 
-					{
-						second = 59;
-						minute--;
-						ddSecond = dFormat.format(second);
-						ddMinute = dFormat.format(minute);
-						timerCount.setText(ddMinute +":"+ddSecond);
-					}
-					if(minute==0 && second==0) 
-					{
-						timer.stop();
-					}
-				}
-			}
 			
-			); // <- sad winky face 
-	
-			}
 	}
