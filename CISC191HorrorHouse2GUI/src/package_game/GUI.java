@@ -93,13 +93,13 @@ public class GUI
 		/////IMAGES/////
 		//Start screen image
 		img1 = new JLabel();
-		img1.setIcon(new ImageIcon("hh.png"));
+		img1.setIcon(new ImageIcon("Images/hh.png"));
 		//Door image
 		img2 = new JLabel();
-		img2.setIcon(new ImageIcon("hhDoor.png"));
+		img2.setIcon(new ImageIcon("Images/hhDoor.png"));
 		//LR image
 		img3 = new JLabel();
-		img3.setIcon(new ImageIcon("lr.png"));
+		img3.setIcon(new ImageIcon("Images/lr.png"));
 		
 		//image panel1
 		imagePanel= new JPanel();
@@ -300,8 +300,8 @@ public class GUI
 				textArea.setText("Hmm, what is that in the corner of the couch?\n"
 				+"The child takes a closer look to see an old crumpled newspaper wedged in between the dirty cushions.\n"
 				+"It might have something helpful!\n"
-				+ "Its a newspaper stained with bloody fingerprints� \n"
-				+"Its title reads �Mad Scientist and his Zombies�,\n"
+				+ "Its a newspaper stained with bloody fingerprints\n"
+				+"Its title reads Mad Scientist and his Zombies,\n"
 				+"which talks about a mysterious scientist who was trying to bring back his loved ones from the dead,\n"
 				+"but he accidently brought them back as zombies.\n"
 				+"One day his house-lab exploded, and these zombies went loose.\n"
@@ -310,7 +310,7 @@ public class GUI
 				+"date of the article was published on October 31st, 2020.\n" 
 				+"Then he notices that the scientist was 31 years old at the time,\n"
 				+"and he had created 31 zombies before he disappeared.\n"
-				+"Wow� well 31 seems to be an important number here! You might want to hold on to it.");
+				+"Wow, well 31 seems to be an important number here! You might want to hold on to it.");
 			}
 			if (e.getSource()== skipCouch)
 			{
