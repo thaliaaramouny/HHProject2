@@ -24,14 +24,15 @@ import javax.swing.Timer;//new
 public class GUI 
 {
 	JFrame window;
-	JPanel centerPanel, bottomPanel, textPanel, choicePanel, statsPanel, commentPanel,buttonPanel, imagePanel, imagePanel2;
-	JLabel title, timerLabel, timerCount, healthLabel, healthCount, img1, img2, img3, img4;
+	JPanel centerPanel, bottomPanel, textPanel, choicePanel, statsPanel, commentPanel,buttonPanel;
+	JPanel imagePanel, imagePanel2, imagePanel3, imagePanel4, imagePanel5, imagePanel6, imagePanel7, imagePanel8, imagePanel9, imagePanel10, imagePanel11;
+	JLabel title, timerLabel, timerCount, healthLabel, healthCount, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
 	JTextField txt1;
-	JButton startButton, move1, move2, viewCouch, skipCouch;
+	JButton startButton, move1, move2, viewCouch, skipCouch, enterKitchen;
 	ButtonGroup bg1;
 	JTextArea textArea;
 	Font titleFont, headerFont, buttonFont;
-	Font textFont, textFont1;
+	Font textFont, textFont1, textFont2;
 //JTextField text = new JTextField(20);
     ImageIcon icon, icon1, newImage, image;
 //this is all for the Timer
@@ -68,6 +69,7 @@ public class GUI
 		//FONTS NEEDED
 		headerFont = new Font("Times New Roman", Font.BOLD, 21);
 		textFont1 = new Font("Monospaced", Font.PLAIN, 18);
+		textFont2 = new Font("Monospaced", Font.PLAIN, 15);
 		buttonFont = new Font("Times New Roman", Font.PLAIN, 18);
 	
 		/////CREATING STATS PANEL/////
@@ -102,6 +104,30 @@ public class GUI
 		//LR image
 		img3 = new JLabel();
 		img3.setIcon(new ImageIcon("Images/lr.png"));
+		//Close up couch 
+		img4 = new JLabel();
+		img4.setIcon(new ImageIcon(""));
+		//Newspaper
+		img5 = new JLabel();
+		img5.setIcon(new ImageIcon(""));
+		//Kitchen
+		img6 = new JLabel();
+		img6.setIcon(new ImageIcon(""));
+		//Zoom in drawer 
+		img7 = new JLabel();
+		img7.setIcon(new ImageIcon(""));
+		//Book
+		img8 = new JLabel();
+		img8.setIcon(new ImageIcon(""));
+		//Formula Sheet
+		img9 = new JLabel();
+		img9.setIcon(new ImageIcon(""));
+		//Exit Door 
+		img10 = new JLabel();
+		img10.setIcon(new ImageIcon(""));
+		
+		
+		
 		
 		//image panel1
 		imagePanel= new JPanel();
@@ -111,7 +137,42 @@ public class GUI
 		imagePanel2 = new JPanel();
 		imagePanel2.add(img3);
 		imagePanel2.setBackground(Color.black);
-
+		//image panel 3
+//		imagePanel3 = new JPanel();
+//		imagePanel3.add(img4);
+//		imagePanel3.setBackground(Color.black);
+//		//image panel 4
+//		imagePanel4 = new JPanel();
+//		imagePanel4.add(img5);
+//		imagePanel4.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel5 = new JPanel();
+//		imagePanel5.add(img6);
+//		imagePanel5.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel6 = new JPanel();
+//		imagePanel6.add(img7);
+//		imagePanel6.setBackground(Color.black);
+//		//image panel 2
+//		imagePanel7 = new JPanel();
+//		imagePanel7.add(img8);
+//		imagePanel7.setBackground(Color.black);
+//		//image panel 3
+//		imagePanel8 = new JPanel();
+//		imagePanel8.add(img9);
+//		imagePanel8.setBackground(Color.black);
+//		//image panel 4
+//		imagePanel9 = new JPanel();
+//		imagePanel9.add(img10);
+//		imagePanel9.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel10 = new JPanel();
+//		imagePanel10.add(img11);
+//		imagePanel10.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel11 = new JPanel();
+//		imagePanel11.add(img12);
+//		imagePanel11.setBackground(Color.black);
 		
 		///// Title Screen /////
 		//creating custom fonts to use
@@ -180,19 +241,21 @@ public class GUI
 		viewCouch.setVisible(false);
 		bottomPanel.add(viewCouch);
 		
-		//BUTTON 4
-		skipCouch = new JButton("Skip Couch");
-		skipCouch.setBackground(Color.black);
-		skipCouch.setFont(buttonFont);
-		skipCouch.setForeground(Color.red);
-		skipCouch.setVisible(false);
-		bottomPanel.add(skipCouch);
+		//From couch to kitchen 
+		enterKitchen = new JButton("Enter Kitchen");
+		enterKitchen.setBackground(Color.black);
+		enterKitchen.setFont(buttonFont);
+		enterKitchen.setForeground(Color.red);
+		enterKitchen.setVisible(false);
+		bottomPanel.add(enterKitchen);
+		
 		
 
 		//adding ActionListener to buttons
 		move1.addActionListener(BL);
 		move2.addActionListener(BL);
 		viewCouch.addActionListener(BL);
+		enterKitchen.addActionListener(BL);
 	
 		//making window visible
 		window.setVisible(true);
@@ -268,22 +331,20 @@ public class GUI
 				move1.setVisible(false);
 				move2.setVisible(false);
 				imagePanel2.add(textArea);
-				textArea.setText("The Child walks inside.\n"
-					+"The door closes behind him.\n"
+				textArea.setFont(textFont2);
+				textArea.setText("The Child walks inside.The door closes behind him.\n"
 					+"The child screams and looks around the room panicked and scared.\n"
 					+"As the child turns around he sees a keypad with the digits 1-9.\n"
 					+"An Over-head speaker starts to speak, and he hears.\n"
-					+"WELCOME YOUNG ONE. YOU HAVE ENTERED MY HORROR HOUSE,\n"
-					+"FILLED WITH MANY SCARY ITEMS.\n " 
+					+"WELCOME YOUNG ONE. YOU HAVE ENTERED MY HORROR HOUSE,\n" 
 					+"AS I SPEAK THE HOUSE IS BEING PUMPED WITH NITROUS OXIDE.\n"
-					+"YOU WILL DIE IN EXACTLY 15 MINUTES. \n"
-					+"'HAHAHA'"
+					+"YOU WILL DIE IN EXACTLY 15 MINUTES. HAHAHA\n"
 					+"'FIND THEM FAST AND INPUT YOUR CODE INTO THE KEYPAD'\n"
 					+"The child looks around and realizes he walked straight\n"
 					+"into an old dark living room.\n"
 					+"He decides to look around for any clues to help him escape.");
 				viewCouch.setVisible(true);
-				skipCouch.setVisible(true);
+				enterKitchen.setVisible(true);
 				
 			}
 			
@@ -298,28 +359,29 @@ public class GUI
 			if (e.getSource() == viewCouch)
 			{
 				viewCouch.setVisible(false);
-				skipCouch.setVisible(false);
+				viewCouch.setVisible(false);
+				textArea.setFont(textFont1);
 				textArea.setText("Hmm, what is that in the corner of the couch?\n"
-				+"The child takes a closer look to see an old crumpled newspaper wedged in between the dirty cushions.\n"
-				+"It might have something helpful!\n"
+				+"The child takes a closer look to see an old crumpled newspaper \n"
+				+ "wedged in between the dirty cushions.It might have something helpful!\n"
 				+ "Its a newspaper stained with bloody fingerprints\n"
-				+"Its title reads Mad Scientist and his Zombies,\n"
-				+"which talks about a mysterious scientist who was trying to bring back his loved ones from the dead,\n"
-				+"but he accidently brought them back as zombies.\n"
-				+"One day his house-lab exploded, and these zombies went loose.\n"
-				+"Ever since, he was nowhere to be found. \n" 
-				+"The child skims through the rest of the newspaper and sees that the\n"
-				+"date of the article was published on October 31st, 2020.\n" 
-				+"Then he notices that the scientist was 31 years old at the time,\n"
-				+"and he had created 31 zombies before he disappeared.\n"
-				+"Wow, well 31 seems to be an important number here! You might want to hold on to it.");
+				+ "... \n"
+				+"Wow, well 31 seems to be an important number here! \n"
+				+ "You might want to hold on to it.");
+				enterKitchen.setVisible(true);
 			}
-			if (e.getSource()== skipCouch)
+			
+			if (e.getSource() == enterKitchen)
 			{
 				viewCouch.setVisible(false);
-				skipCouch.setVisible(false);
-				textArea.setText("The child walks away from the couch, and into the living room.");
+				textArea.setText("The child runs to the Kitchen. \n"
+						+ "The Child looks around and sees A JUNK DRAWER. \n");
+				enterKitchen.setVisible(false);
+			
 			}
+			
+			
+			
 		}
 	
 	}
