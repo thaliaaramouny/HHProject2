@@ -84,6 +84,9 @@ public class GUI
 		timerCount = new JLabel();		
 		timerCount.setFont(headerFont);
 		timerCount.setForeground(Color.white);
+		timerCount.setText("3:00");
+		second =0;
+		minute =3;
 		statsPanel.add(timerCount);
 		
 		
