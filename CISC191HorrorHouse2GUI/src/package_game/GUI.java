@@ -85,18 +85,20 @@ public class GUI
 		timerCount.setFont(headerFont);
 		timerCount.setForeground(Color.white);
 		statsPanel.add(timerCount);
-		
+		timerCount.setText("03:00");//new
+		second = 0; //new
+		minute = 3; //new
 		
 		/////IMAGES/////
 		//Start screen image
 		img1 = new JLabel();
-		img1.setIcon(new ImageIcon("hh.png"));
+		img1.setIcon(new ImageIcon("Images/hh.png"));
 		//Door image
 		img2 = new JLabel();
-		img2.setIcon(new ImageIcon("hhDoor.png"));
+		img2.setIcon(new ImageIcon("Images/hhDoor.png"));
 		//LR image
 		img3 = new JLabel();
-		img3.setIcon(new ImageIcon("lr.png"));
+		img3.setIcon(new ImageIcon("Images/lr.png"));
 		
 		//image panel1
 		imagePanel= new JPanel();
