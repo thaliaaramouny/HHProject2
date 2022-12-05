@@ -24,8 +24,9 @@ import javax.swing.Timer;//new
 public class GUI 
 {
 	JFrame window;
-	JPanel centerPanel, bottomPanel, textPanel, choicePanel, statsPanel, commentPanel,buttonPanel, imagePanel, imagePanel2;
-	JLabel title, timerLabel, timerCount, healthLabel, healthCount, img1, img2, img3, img4;
+	JPanel centerPanel, bottomPanel, textPanel, choicePanel, statsPanel, commentPanel,buttonPanel;
+	JPanel imagePanel, imagePanel2, imagePanel3, imagePanel4, imagePanel5, imagePanel6, imagePanel7, imagePanel8, imagePanel9, imagePanel10, imagePanel11;
+	JLabel title, timerLabel, timerCount, healthLabel, healthCount, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
 	JTextField txt1;
 	JButton startButton, move1, move2, viewCouch, skipCouch;
 	ButtonGroup bg1;
@@ -100,6 +101,30 @@ public class GUI
 		//LR image
 		img3 = new JLabel();
 		img3.setIcon(new ImageIcon("Images/lr.png"));
+		//Close up couch 
+		img4 = new JLabel();
+		img4.setIcon(new ImageIcon(""));
+		//Newspaper
+		img5 = new JLabel();
+		img5.setIcon(new ImageIcon(""));
+		//Kitchen
+		img6 = new JLabel();
+		img6.setIcon(new ImageIcon(""));
+		//Zoom in drawer 
+		img7 = new JLabel();
+		img7.setIcon(new ImageIcon(""));
+		//Book
+		img8 = new JLabel();
+		img8.setIcon(new ImageIcon(""));
+		//Formula Sheet
+		img9 = new JLabel();
+		img9.setIcon(new ImageIcon(""));
+		//Exit Door 
+		img10 = new JLabel();
+		img10.setIcon(new ImageIcon(""));
+		
+		
+		
 		
 		//image panel1
 		imagePanel= new JPanel();
@@ -109,7 +134,42 @@ public class GUI
 		imagePanel2 = new JPanel();
 		imagePanel2.add(img3);
 		imagePanel2.setBackground(Color.black);
-
+		//image panel 3
+		imagePanel3 = new JPanel();
+		imagePanel3.add(img4);
+		imagePanel3.setBackground(Color.black);
+		//image panel 4
+		imagePanel4 = new JPanel();
+		imagePanel4.add(img5);
+		imagePanel4.setBackground(Color.black);
+		//image panel 5
+		imagePanel5 = new JPanel();
+		imagePanel5.add(img6);
+		imagePanel5.setBackground(Color.black);
+		//image panel 5
+		imagePanel6 = new JPanel();
+		imagePanel6.add(img7);
+		imagePanel6.setBackground(Color.black);
+		//image panel 2
+		imagePanel7 = new JPanel();
+		imagePanel7.add(img8);
+		imagePanel7.setBackground(Color.black);
+		//image panel 3
+		imagePanel8 = new JPanel();
+		imagePanel8.add(img9);
+		imagePanel8.setBackground(Color.black);
+		//image panel 4
+		imagePanel9 = new JPanel();
+		imagePanel9.add(img10);
+		imagePanel9.setBackground(Color.black);
+		//image panel 5
+		imagePanel10 = new JPanel();
+		imagePanel10.add(img11);
+		imagePanel10.setBackground(Color.black);
+		//image panel 5
+		imagePanel11 = new JPanel();
+		imagePanel11.add(img12);
+		imagePanel11.setBackground(Color.black);
 		
 		///// Title Screen /////
 		//creating custom fonts to use
