@@ -40,7 +40,8 @@ public class GUI
 	Timer timer;
     int second, minute;
     //these are the names of string
-    String stringSecond, stringMinute, correctPin, userPin;
+    String stringSecond, stringMinute;
+	int correctPin, userPin;
     DecimalFormat dFormat = new DecimalFormat("00");
     
     ButtonListener BL = new ButtonListener();
@@ -282,13 +283,15 @@ public class GUI
 		bottomPanel.add(enterPin);
 		
 		//pin related stuff
-		correctPin = "314";
-		pinLabel = new JLabel("Enter pin here: ");
+		correctPin = 314;
+		pinLabel = new JLabel("Enter your 3-digit code here: ");
+		pinLabel.setFont(textFont1);
+		pinLabel.setForeground(Color.white);
 		pin = new JTextField("",10);
 		pin.setVisible(false);
-		bottomPanel.add(pin);
-		pinLabel.setVisible(false);
 		bottomPanel.add(pinLabel);
+		pinLabel.setVisible(false);
+		bottomPanel.add(pin);
 		pin.addActionListener(TF);
 		
 		//adding ActionListener to buttons
@@ -374,11 +377,18 @@ public class GUI
 			
 			if(e.getSource() == move1)
 			{
+				//image
 				window.remove(imagePanel);
 				window.add(imagePanel2);
+				imagePanel2.add(textArea);
+				
+				//buttons
 				move1.setVisible(false);
 				move2.setVisible(false);
-				imagePanel2.add(textArea);
+				viewCouch.setVisible(true);
+				enterKitchen.setVisible(true);
+				
+				//text
 				textArea.setFont(textFont2);
 				textArea.setText("The Child walks inside.The door closes behind him.\n"
 					+"The child screams and looks around the room panicked and scared.\n"
@@ -391,8 +401,7 @@ public class GUI
 					+"The child looks around and realizes he walked straight\n"
 					+"into an old dark living room.\n"
 					+"He decides to look around for any clues to help him escape.");
-				viewCouch.setVisible(true);
-				enterKitchen.setVisible(true);
+				
 				
 			}
 			
@@ -482,12 +491,18 @@ public class GUI
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-			userPin = pin.getText();
+			
+			userPin = Integer.parseInt(pin.getText());
 			if(userPin == correctPin) {
+<<<<<<< HEAD
 				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: ï¿½NOOOO, COME BACK, COME BACKKKKKï¿½\n"
+=======
+				textArea.setFont(textFont1);
+				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: “NOOOO, COME BACK, COME BACKKKKK”\n"
+>>>>>>> branch 'main' of https://github.com/thaliaaramouny/HHProject2.git
 						+ "As the door opens the child runs, and runs, runs. As the house shrinks in \n"
-						+ "the distance the sounds fade as well. Still loopy from all of the NITROUS OXIDE. \n"
-						+ "Emissions the child collapses.\n"
+						+ "the distance the sounds fade as well. Still loopy from all of the NITROUS OXIDE \n"
+						+ "emmissions, the child collapses.\n"
 						+ "1 WEEK LATER\n"
 						+ "As the childï¿½s eyes slowly open he saw the room filled \n"
 						+ "with flowers and get-well cards. In the chair beside him,\n"
@@ -498,13 +513,21 @@ public class GUI
 						+ "He looks outside the window, which was cracked open ever so slightly.\n"
 						+ "A chill fall breeze gently grazes the back of his neck.\n"
 						+ "As the child starts to go to sleep, his body does not.\n"
-						+ "YOU WIN\n"
-						+ ".\n"
-						+ ".\n"
-						+ ".\n"
-						+ "HUMANITY LOSE \n");
+						+ "YOU WIN \n"
+						+ "HUMANITY LOSES \n");
 				
-				
+				textArea.setVisible(true);	
+			}
+			
+			if(userPin != correctPin) {
+				textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
+						+ "“HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+						+ "MY CHILD, I’M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+						+ "BUT YOU MUST NEVER LEAVE, WE SHALL DIE TOGETHER.”\n"
+						+ "As his voice grows faint, everything becomes dark\n"
+						+ "YOU LOSE\n"
+						+ "HUMANITY WINS\r\n");
+				textArea.setVisible(true);	
 			}
 			System.out.println("check");
 			
