@@ -123,7 +123,7 @@ public class GUI
 		img8.setIcon(new ImageIcon("Images/Drawer.png"));
 		//Formula Sheet
 		img9 = new JLabel();
-		img9.setIcon(new ImageIcon("Images/Formula"));
+		img9.setIcon(new ImageIcon("Images/FormulaSheet.png"));
 		//Exit Door 
 		img10 = new JLabel();
 		img10.setIcon(new ImageIcon("Images/ExitDoor.png"));
