@@ -97,22 +97,22 @@ public class GUI
 		/////IMAGES/////
 		//Start screen image
 		img1 = new JLabel();
-		img1.setIcon(new ImageIcon("Images/hh.png"));
+		img1.setIcon(new ImageIcon("Images/House.png"));
 		//Door image
 		img2 = new JLabel();
-		img2.setIcon(new ImageIcon("Images/hhDoor.png"));
+		img2.setIcon(new ImageIcon("Images/frontDoor.png"));
 		//LR image
 		img3 = new JLabel();
-		img3.setIcon(new ImageIcon("Images/lr.png"));
+		img3.setIcon(new ImageIcon("Images/LivingRoom.png"));
 		//Close up couch 
 		img4 = new JLabel();
-		img4.setIcon(new ImageIcon(""));
+		img4.setIcon(new ImageIcon("Images/Couch.png"));
 		//Newspaper
 		img5 = new JLabel();
-		img5.setIcon(new ImageIcon(""));
+		img5.setIcon(new ImageIcon("Images/note.png"));
 		//Kitchen
 		img6 = new JLabel();
-		img6.setIcon(new ImageIcon(""));
+		img6.setIcon(new ImageIcon("Images/KitchenDoor.png"));
 		//Zoom in drawer 
 		img7 = new JLabel();
 		img7.setIcon(new ImageIcon(""));
