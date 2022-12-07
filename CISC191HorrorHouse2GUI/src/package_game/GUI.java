@@ -123,7 +123,7 @@ public class GUI
 		img8.setIcon(new ImageIcon("Images/Drawer.png"));
 		//Formula Sheet
 		img9 = new JLabel();
-		img9.setIcon(new ImageIcon(""));
+		img9.setIcon(new ImageIcon("Images/Formula"));
 		//Exit Door 
 		img10 = new JLabel();
 		img10.setIcon(new ImageIcon("Images/ExitDoor.png"));
@@ -494,12 +494,8 @@ public class GUI
 			
 			userPin = Integer.parseInt(pin.getText());
 			if(userPin == correctPin) {
-<<<<<<< HEAD
+
 				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: ï¿½NOOOO, COME BACK, COME BACKKKKKï¿½\n"
-=======
-				textArea.setFont(textFont1);
-				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: “NOOOO, COME BACK, COME BACKKKKK”\n"
->>>>>>> branch 'main' of https://github.com/thaliaaramouny/HHProject2.git
 						+ "As the door opens the child runs, and runs, runs. As the house shrinks in \n"
 						+ "the distance the sounds fade as well. Still loopy from all of the NITROUS OXIDE \n"
 						+ "emmissions, the child collapses.\n"
@@ -521,9 +517,9 @@ public class GUI
 			
 			if(userPin != correctPin) {
 				textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
-						+ "“HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
-						+ "MY CHILD, I’M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
-						+ "BUT YOU MUST NEVER LEAVE, WE SHALL DIE TOGETHER.”\n"
+						+ "ï¿½HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+						+ "MY CHILD, Iï¿½M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+						+ "BUT YOU MUST NEVER LEAVE, WE SHALL DIE TOGETHER.ï¿½\n"
 						+ "As his voice grows faint, everything becomes dark\n"
 						+ "YOU LOSE\n"
 						+ "HUMANITY WINS\r\n");
