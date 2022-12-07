@@ -116,16 +116,16 @@ public class GUI
 		img6.setIcon(new ImageIcon("Images/KitchenDoor.png"));
 		//Zoom in drawer 
 		img7 = new JLabel();
-		img7.setIcon(new ImageIcon(""));
+		img7.setIcon(new ImageIcon("Images/Cabinate.png"));
 		//Book
 		img8 = new JLabel();
-		img8.setIcon(new ImageIcon(""));
+		img8.setIcon(new ImageIcon("Images/Drawer.png"));
 		//Formula Sheet
 		img9 = new JLabel();
 		img9.setIcon(new ImageIcon(""));
 		//Exit Door 
 		img10 = new JLabel();
-		img10.setIcon(new ImageIcon(""));
+		img10.setIcon(new ImageIcon("Images/ExitDoor.png"));
 		
 		
 		
@@ -139,14 +139,14 @@ public class GUI
 		imagePanel2.add(img3);
 		imagePanel2.setBackground(Color.black);
 		//image panel 3
-//		imagePanel3 = new JPanel();
-//		imagePanel3.add(img4);
-//		imagePanel3.setBackground(Color.black);
+		imagePanel3 = new JPanel();
+		imagePanel3.add(img4);
+		imagePanel3.setBackground(Color.black);
 //		//image panel 4
-//		imagePanel4 = new JPanel();
-//		imagePanel4.add(img5);
-//		imagePanel4.setBackground(Color.black);
-//		//image panel 5
+		imagePanel4 = new JPanel();
+		imagePanel4.add(img5);
+		imagePanel4.setBackground(Color.black);
+		//image panel 5
 //		imagePanel5 = new JPanel();
 //		imagePanel5.add(img6);
 //		imagePanel5.setBackground(Color.black);
@@ -456,7 +456,7 @@ public class GUI
 						+ "Dates and times are important, think twice \n"
 						+ "about your findings and you may be surprised. \n"
 						+ "Hmm what can be so important about this date? \n"
-						+ "March 14th, 3/14, a 3 digit number…\n"
+						+ "March 14th, 3/14, a 3 digit numberï¿½\n"
 						+ "Time is running out, beat it or prepare for your demise\n");
 				enterPin.setVisible(true);
 			}
@@ -484,12 +484,12 @@ public class GUI
 		{
 			userPin = pin.getText();
 			if(userPin == correctPin) {
-				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: “NOOOO, COME BACK, COME BACKKKKK”\n"
+				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: ï¿½NOOOO, COME BACK, COME BACKKKKKï¿½\n"
 						+ "As the door opens the child runs, and runs, runs. As the house shrinks in \n"
 						+ "the distance the sounds fade as well. Still loopy from all of the NITROUS OXIDE. \n"
 						+ "Emissions the child collapses.\n"
 						+ "1 WEEK LATER\n"
-						+ "As the child’s eyes slowly open he saw the room filled \n"
+						+ "As the childï¿½s eyes slowly open he saw the room filled \n"
 						+ "with flowers and get-well cards. In the chair beside him,\n"
 						+ " he saw his mom slumped over. He just watched as she slept peacefully beside him.\n"
 						+ "He finally felt reassured that he was safe, \n"
