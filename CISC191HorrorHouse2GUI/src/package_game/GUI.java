@@ -107,14 +107,14 @@ public class GUI
 		img3 = new JLabel();
 		img3.setIcon(new ImageIcon("Images/LivingRoom.png"));
 		//Close up couch 
-		img4 = new JLabel();
-		img4.setIcon(new ImageIcon("Images/Couch.png"));
+	//	img4 = new JLabel();
+	//	img4.setIcon(new ImageIcon("Images/Couch.png"));
 		//Newspaper
 		img5 = new JLabel();
 		img5.setIcon(new ImageIcon("Images/note.png"));
 		//Kitchen
-		img6 = new JLabel();
-		img6.setIcon(new ImageIcon("Images/KitchenDoor.png"));
+	//	img6 = new JLabel();
+	//	img6.setIcon(new ImageIcon("Images/KitchenDoor.png"));
 		//Zoom in drawer 
 		img7 = new JLabel();
 		img7.setIcon(new ImageIcon("Images/Cabinate.png"));
@@ -128,8 +128,8 @@ public class GUI
 		img10 = new JLabel();
 		img10.setIcon(new ImageIcon("Images/ExitDoor.png"));
 		//Win Screen 
-		img11 = new JLabel();
-		img11.setIcon(new ImageIcon("Images/WinScreen.png"));
+	//	img11 = new JLabel();
+	//	img11.setIcon(new ImageIcon("Images/WinScreen.png"));
 		
 		
 		
@@ -144,40 +144,46 @@ public class GUI
 		imagePanel2.setBackground(Color.black);
 		//image panel 3
 		imagePanel3 = new JPanel();
-		imagePanel3.add(img4);
+		imagePanel3.add(img5);
 		imagePanel3.setBackground(Color.black);
 		//image panel 4
 		imagePanel4 = new JPanel();
-		imagePanel4.add(img5);
+		imagePanel4.add(img7);
 		imagePanel4.setBackground(Color.black);
 		//image panel 5
-		imagePanel5 = new JPanel();
-		imagePanel5.add(img6);
-		imagePanel5.setBackground(Color.black);
-		//image panel 5
-		imagePanel6 = new JPanel();
-		imagePanel6.add(img7);
-		imagePanel6.setBackground(Color.black);
-		//image panel 2
-		imagePanel7 = new JPanel();
-		imagePanel7.add(img8);
-		imagePanel7.setBackground(Color.black);
-		//image panel 3
-		imagePanel8 = new JPanel();
-		imagePanel8.add(img9);
-		imagePanel8.setBackground(Color.black);
-		//image panel 4
-		imagePanel9 = new JPanel();
-		imagePanel9.add(img10);
-		imagePanel9.setBackground(Color.black);
-		//image panel 5
-		imagePanel10 = new JPanel();
-		imagePanel10.add(img11);
-		imagePanel10.setBackground(Color.black);
-		//image panel 5
-		imagePanel11 = new JPanel();
-		imagePanel11.add(img12);
-		imagePanel11.setBackground(Color.black);
+//		imagePanel5 = new JPanel();
+//		imagePanel5.add(img6);
+//		imagePanel5.setBackground(Color.black);
+//		//image panel 6
+//		imagePanel6 = new JPanel();
+//		imagePanel6.add(img7);
+//		imagePanel6.setBackground(Color.black);
+//		//image panel 7
+//		imagePanel7 = new JPanel();
+//		imagePanel7.add(img8);
+//		imagePanel7.setBackground(Color.black);
+//		//image panel 8
+//		imagePanel8 = new JPanel();
+//		imagePanel8.add(img9);
+//		imagePanel8.setBackground(Color.black);
+//		//image panel 9
+//		imagePanel9 = new JPanel();
+//		imagePanel9.add(img10);
+//		imagePanel9.setBackground(Color.black);
+//		//image panel 10
+//		imagePanel10 = new JPanel();
+//		imagePanel10.add(img11);
+//		imagePanel10.setBackground(Color.black);
+//		//image panel 11
+//		imagePanel11 = new JPanel();
+//		imagePanel11.add(img12);
+//		imagePanel11.setBackground(Color.black);
+//		//image panel 12
+//		imagePanel12 = new JPanel();
+//		imagePanel12.add(img13);
+//		imagePanel12.setBackground(Color.black);
+		
+		
 		
 		///// Title Screen /////
 		//creating custom fonts to use
@@ -425,6 +431,11 @@ public class GUI
 			
 			if (e.getSource() == viewCouch)
 			{
+				//image
+				window.remove(imagePanel2);
+				window.add(imagePanel3);
+				imagePanel3.add(textArea);
+				
 				viewCouch.setVisible(false);
 				viewCouch.setVisible(false);
 				textArea.setFont(textFont1);
@@ -440,6 +451,12 @@ public class GUI
 			
 			if (e.getSource() == enterKitchen)
 			{
+				//image
+				window.remove(imagePanel3);
+				window.add(imagePanel4);
+				imagePanel4.add(textArea);
+				
+				
 				viewCouch.setVisible(false);
 				textArea.setFont(textFont1);
 				textArea.setText("The child walks around in the kitchen and sees \n"
