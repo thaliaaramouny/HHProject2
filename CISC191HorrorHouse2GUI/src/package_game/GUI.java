@@ -97,7 +97,7 @@ public class GUI
 		minute = 3; //new
 		
 		/////IMAGES/////
-		//Start screen image
+		//Start screen image, lose screen
 		img1 = new JLabel();
 		img1.setIcon(new ImageIcon("Images/House.png"));
 		//Door image
@@ -146,18 +146,18 @@ public class GUI
 		imagePanel3 = new JPanel();
 		imagePanel3.add(img4);
 		imagePanel3.setBackground(Color.black);
-//		//image panel 4
+		//image panel 4
 		imagePanel4 = new JPanel();
 		imagePanel4.add(img5);
 		imagePanel4.setBackground(Color.black);
 		//image panel 5
-//		imagePanel5 = new JPanel();
-//		imagePanel5.add(img6);
-//		imagePanel5.setBackground(Color.black);
-//		//image panel 5
-//		imagePanel6 = new JPanel();
-//		imagePanel6.add(img7);
-//		imagePanel6.setBackground(Color.black);
+		imagePanel5 = new JPanel();
+		imagePanel5.add(img6);
+		imagePanel5.setBackground(Color.black);
+		//image panel 5
+		imagePanel6 = new JPanel();
+		imagePanel6.add(img7);
+		imagePanel6.setBackground(Color.black);
 //		//image panel 2
 //		imagePanel7 = new JPanel();
 //		imagePanel7.add(img8);
@@ -348,6 +348,13 @@ public class GUI
 				if(minute==0 && second==0) 
 				{
 					timer.stop();
+					textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
+							+ "“HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+							+ "MY CHILD, I’M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.”\n"
+							+ "As his voice grows faint, everything becomes dark\n"
+							+ "YOU LOSE\n"
+							+ "HUMANITY WINS\n");
 				}
 			}
 		}
