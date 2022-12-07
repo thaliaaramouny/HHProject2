@@ -26,11 +26,12 @@ public class GUI
 	JFrame window;
 	JPanel centerPanel, bottomPanel, textPanel, choicePanel, statsPanel, commentPanel,buttonPanel;
 	JPanel imagePanel, imagePanel2, imagePanel3, imagePanel4, imagePanel5, imagePanel6, imagePanel7, imagePanel8, imagePanel9, imagePanel10, imagePanel11;
-	JLabel title, timerLabel, timerCount, healthLabel, healthCount, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12;
+	JLabel title, timerLabel, timerCount, healthLabel, healthCount, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, pinLabel;
 	JTextField txt1;
-	JButton startButton, move1, move2, viewCouch, skipCouch, enterKitchen;
+	JButton startButton, move1, move2, viewCouch, skipCouch, enterKitchen, viewDrawer, readSheet, pickUpBook, enterPin;
 	ButtonGroup bg1;
 	JTextArea textArea;
+	JTextField pin; //for pin
 	Font titleFont, headerFont, buttonFont;
 	Font textFont, textFont1, textFont2;
 //JTextField text = new JTextField(20);
@@ -39,11 +40,11 @@ public class GUI
 	Timer timer;
     int second, minute;
     //these are the names of string
-    String stringSecond, stringMinute;
+    String stringSecond, stringMinute, correctPin, userPin;
     DecimalFormat dFormat = new DecimalFormat("00");
     
     ButtonListener BL = new ButtonListener();
-	
+    textFieldListener TF = new textFieldListener();
 	public void createGUI() 
 	{
 		/////WINDOW/////
@@ -206,7 +207,6 @@ public class GUI
 		startButton.setBackground(Color.black);
 		startButton.setForeground(Color.RED);
 		startButton.setFont(textFont);
-		startButton.addActionListener(BL);
 		
 		//adding components to bottomPanel
 		bottomPanel.add(startButton);
@@ -249,13 +249,61 @@ public class GUI
 		enterKitchen.setVisible(false);
 		bottomPanel.add(enterKitchen);
 		
+		//button 5
+		viewDrawer = new JButton("View Drawer");
+		viewDrawer.setBackground(Color.black);
+		viewDrawer.setFont(buttonFont);
+		viewDrawer.setForeground(Color.red);
+		viewDrawer.setVisible(false);
+		bottomPanel.add(viewDrawer);
 		
-
+		//button6
+		readSheet = new JButton("Read formula sheet");
+		readSheet.setBackground(Color.black);
+		readSheet.setFont(buttonFont);
+		readSheet.setForeground(Color.red);
+		readSheet.setVisible(false);
+		bottomPanel.add(readSheet);
+		
+		//button 7
+		pickUpBook = new JButton("Pick up book");
+		pickUpBook.setBackground(Color.black);
+		pickUpBook.setFont(buttonFont);
+		pickUpBook.setForeground(Color.red);
+		pickUpBook.setVisible(false);
+		bottomPanel.add(pickUpBook);
+		
+		//final button
+		enterPin = new JButton("ENTER PIN");
+		enterPin.setBackground(Color.black);
+		enterPin.setFont(buttonFont);
+		enterPin.setForeground(Color.red);
+		enterPin.setVisible(false);
+		bottomPanel.add(enterPin);
+		
+		//pin related stuff
+		correctPin = "314";
+		pinLabel = new JLabel("Enter pin here: ");
+		pin = new JTextField("",10);
+		pin.setVisible(false);
+		bottomPanel.add(pin);
+		pinLabel.setVisible(false);
+		bottomPanel.add(pinLabel);
+		pin.addActionListener(TF);
+		
 		//adding ActionListener to buttons
+		startButton.addActionListener(BL);
 		move1.addActionListener(BL);
 		move2.addActionListener(BL);
 		viewCouch.addActionListener(BL);
 		enterKitchen.addActionListener(BL);
+		viewDrawer.addActionListener(BL);
+		readSheet.addActionListener(BL);
+		pickUpBook.addActionListener(BL);
+		enterPin.addActionListener(BL);
+		
+		//
+		
 	
 		//making window visible
 		window.setVisible(true);
@@ -374,17 +422,92 @@ public class GUI
 			if (e.getSource() == enterKitchen)
 			{
 				viewCouch.setVisible(false);
-				textArea.setText("The child runs to the Kitchen. \n"
-						+ "The Child looks around and sees A JUNK DRAWER. \n");
+				textArea.setFont(textFont1);
+				textArea.setText("The child walks around in the kitchen and sees \n"
+						+ "an open junk drawer \n");
 				enterKitchen.setVisible(false);
+				viewDrawer.setVisible(true);
+				
 			
 			}
 			
+			if (e.getSource()== viewDrawer) {
+				viewDrawer.setVisible(false);
+				readSheet.setVisible(true);
+				pickUpBook.setVisible(true);
+				textArea.setText("The junk drawer is filled with various books,\n"
+						+"and sheets and sheets of formulas for\n"
+						+"different chemical compounds.");
+			}
 			
+			if (e.getSource()== readSheet) {
+				readSheet.setVisible(false);
+				textArea.setText("Ahh, chemical compounds and using the scientific method,\n"
+						+ " nothing here for you, but you better find a digit\n"
+						+ " before you get lightheaded!\n");
+				
+			}
 			
+			if(e.getSource() == pickUpBook) {
+				pickUpBook.setVisible(false);
+				readSheet.setVisible(false);
+				textArea.setText("It reads'Evil Science: 1st Edition, \n"
+						+ "Publishing date: March 14th, 1880'	\n"
+						+ "Dates and times are important, think twice \n"
+						+ "about your findings and you may be surprised. \n"
+						+ "Hmm what can be so important about this date? \n"
+						+ "March 14th, 3/14, a 3 digit number…\n"
+						+ "Time is running out, beat it or prepare for your demise\n");
+				enterPin.setVisible(true);
+			}
+			
+			if(e.getSource() == enterPin) 
+			{
+				textArea.setVisible(false);
+				pin.setEditable(true);
+				pinLabel.setVisible(true);
+				pin.setVisible(true);
+				
+				enterPin.setVisible(false);
+				
+				
+			}
 		}
 	
 	}
+	
+	private class textFieldListener implements ActionListener
+	{
 
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			userPin = pin.getText();
+			if(userPin == correctPin) {
+				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: “NOOOO, COME BACK, COME BACKKKKK”\n"
+						+ "As the door opens the child runs, and runs, runs. As the house shrinks in \n"
+						+ "the distance the sounds fade as well. Still loopy from all of the NITROUS OXIDE. \n"
+						+ "Emissions the child collapses.\n"
+						+ "1 WEEK LATER\n"
+						+ "As the child’s eyes slowly open he saw the room filled \n"
+						+ "with flowers and get-well cards. In the chair beside him,\n"
+						+ " he saw his mom slumped over. He just watched as she slept peacefully beside him.\n"
+						+ "He finally felt reassured that he was safe, \n"
+						+ "far from the house, far from the evil man who took him, \n"
+						+ "and far from the fears that slowly drowned him. \n"
+						+ "He looks outside the window, which was cracked open ever so slightly.\n"
+						+ "A chill fall breeze gently grazes the back of his neck.\n"
+						+ "As the child starts to go to sleep, his body does not.\n"
+						+ "YOU WIN\n"
+						+ ".\n"
+						+ ".\n"
+						+ ".\n"
+						+ "HUMANITY LOSE \n");
+				
+				
+			}
+			System.out.println("check");
 			
-	}
+		}
+	}		
+}
