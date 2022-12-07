@@ -459,22 +459,17 @@ public class GUI
 				enterPin.setVisible(true);
 			}
 			
-			if(e.getSource() == enterPin) {
+			if(e.getSource() == enterPin) 
+			{
 				textArea.setVisible(false);
 				pin.setEditable(true);
 				pinLabel.setVisible(true);
 				pin.setVisible(true);
 				
 				enterPin.setVisible(false);
-				userPin = pin.getText();
+				
 				
 			}
-			
-			
-			
-			
-			
-			
 		}
 	
 	}
@@ -485,6 +480,7 @@ public class GUI
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
+			userPin = pin.getText();
 			if(userPin == correctPin) {
 				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: “NOOOO, COME BACK, COME BACKKKKK”\n"
 						+ "As the door opens the child runs, and runs, runs. As the house shrinks in \n"
@@ -506,8 +502,9 @@ public class GUI
 						+ ".\n"
 						+ "HUMANITY LOSE \n");
 				
-				System.out.println("check");
+				
 			}
+			System.out.println("check");
 			
 		}
 	}		
