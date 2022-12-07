@@ -127,6 +127,9 @@ public class GUI
 		//Exit Door 
 		img10 = new JLabel();
 		img10.setIcon(new ImageIcon("Images/ExitDoor.png"));
+		//Win Screen 
+		img11 = new JLabel();
+		img11.setIcon(new ImageIcon("Images/WinScreen.png"));
 		
 		
 		
