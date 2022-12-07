@@ -158,26 +158,26 @@ public class GUI
 		imagePanel6 = new JPanel();
 		imagePanel6.add(img7);
 		imagePanel6.setBackground(Color.black);
-//		//image panel 2
-//		imagePanel7 = new JPanel();
-//		imagePanel7.add(img8);
-//		imagePanel7.setBackground(Color.black);
-//		//image panel 3
-//		imagePanel8 = new JPanel();
-//		imagePanel8.add(img9);
-//		imagePanel8.setBackground(Color.black);
-//		//image panel 4
-//		imagePanel9 = new JPanel();
-//		imagePanel9.add(img10);
-//		imagePanel9.setBackground(Color.black);
-//		//image panel 5
-//		imagePanel10 = new JPanel();
-//		imagePanel10.add(img11);
-//		imagePanel10.setBackground(Color.black);
-//		//image panel 5
-//		imagePanel11 = new JPanel();
-//		imagePanel11.add(img12);
-//		imagePanel11.setBackground(Color.black);
+		//image panel 2
+		imagePanel7 = new JPanel();
+		imagePanel7.add(img8);
+		imagePanel7.setBackground(Color.black);
+		//image panel 3
+		imagePanel8 = new JPanel();
+		imagePanel8.add(img9);
+		imagePanel8.setBackground(Color.black);
+		//image panel 4
+		imagePanel9 = new JPanel();
+		imagePanel9.add(img10);
+		imagePanel9.setBackground(Color.black);
+		//image panel 5
+		imagePanel10 = new JPanel();
+		imagePanel10.add(img11);
+		imagePanel10.setBackground(Color.black);
+		//image panel 5
+		imagePanel11 = new JPanel();
+		imagePanel11.add(img12);
+		imagePanel11.setBackground(Color.black);
 		
 		///// Title Screen /////
 		//creating custom fonts to use
