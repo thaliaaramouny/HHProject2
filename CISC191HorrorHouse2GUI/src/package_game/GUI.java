@@ -513,6 +513,8 @@ public class GUI
 				window.add(imagePanel8);
 				imagePanel8.add(textArea);
 				
+				
+				
 				//buttons
 				readSheet.setVisible(false);
 				pickUpBook.setVisible(false);
