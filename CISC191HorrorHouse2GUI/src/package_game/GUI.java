@@ -97,6 +97,7 @@ public class GUI
 		minute = 3; //new
 		
 		/////IMAGES/////
+		//another change
 		//Start screen image, lose screen
 		img1 = new JLabel();
 		img1.setIcon(new ImageIcon("Images/House.png"));
