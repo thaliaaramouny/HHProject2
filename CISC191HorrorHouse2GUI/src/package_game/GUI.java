@@ -388,9 +388,9 @@ public class GUI
 				{
 					timer.stop();
 					textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
-							+ "“HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
-							+ "MY CHILD, I’M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
-							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.”\n"
+							+ "ï¿½HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+							+ "MY CHILD, Iï¿½M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.ï¿½\n"
 							+ "â€œHAHAHA, YOU COULD NEVER ESCAPE ME! \n"
 							+ "MY CHILD, Iâ€™M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
 							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.\n"
@@ -577,7 +577,7 @@ public class GUI
 //						+ "Dates and times are important, think twice \n"
 //						+ "about your findings and you may be surprised. \n"
 //						+ "Hmm what can be so important about this date? \n"
-//						+ "March 14th, 3/14, a 3 digit number…\n"
+//						+ "March 14th, 3/14, a 3 digit numberï¿½\n"
 //						+ "Time is running out, beat it or prepare for your demise\n");
 //				enterPin.setVisible(true);
 //
@@ -597,7 +597,7 @@ public class GUI
 //						+ "Dates and times are important, think twice \n"
 //						+ "about your findings and you may be surprised. \n"
 //						+ "Hmm what can be so important about this date? \n"
-//						+ "March 14th, 3/14, a 3 digit numberï¿\n"
+//						+ "March 14th, 3/14, a 3 digit numberï¿½\n"
 //						+ "Time is running out, beat it or prepare for your demise\n");
 //				enterPin.setVisible(true);
 //			}
@@ -630,20 +630,18 @@ public class GUI
 			
 			if(userPin == correctPin) {
 				textArea.setFont(textFont1);
-				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: ï¿½NOOOO, COME BACK, COME BACKKKKKï¿½\n"
-						+ "As the door opens the child runs, and runs, runs. As the house shrinks in \n"
-						+ "the distance the sounds fade as well. Still loopy from all of the NITROUS OXIDE \n"
-						+ "emmissions, the child collapses.\n"
+				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: NO COME BACK!\n"
+						+ "As the door opens the child runs fast. As the house shrinks in \n"
+						+ "the distance the voice of the scientist fades \n"
+						+ "Exhausted, the child collapses.\n"
 						+ "1 WEEK LATER\n"
-						+ "As the child’s eyes slowly open he saw the room filled \n"
-						+ "with flowers and get-well cards. In the chair beside him,\n"
-						+ " he saw his mom slumped over. He just watched as she slept peacefully beside him.\n"
-						+ "He finally felt reassured that he was safe, \n"
-						+ "far from the house, far from the evil man who took him, \n"
-						+ "and far from the fears that slowly drowned him. \n"
-						+ "He looks outside the window, which was cracked open ever so slightly.\n"
-						+ "A chill fall breeze gently grazes the back of his neck.\n"
-						+ "As the child starts to go to sleep, his body does not.\n"
+						+ "As the child open thier eyes they see a room filled \n"
+						+ "with flowers and get-well cards and \n"
+						+ " he saw his mom slumped over. He just watched as she slept.\n"
+						+ "He finally felt reassured that he was safe, \n"					
+						+ "As the child starts to go back to sleep,\n"
+						+ " his body does not.\n"
+						+"....\n"
 						+ "YOU WIN \n"
 						+ "HUMANITY LOSES \n");
 				
@@ -655,9 +653,9 @@ public class GUI
 			{
 				textArea.setFont(textFont1);
 				textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
-						+ "“HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
-						+ "MY CHILD, I’M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
-						+ "BUT YOU MUST NEVER LEAVE, WE SHALL DIE TOGETHER.”\n"
+						+ "HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+						+ "MY CHILD, I AM SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+						+ "BUT YOU MUST NEVER LEAVE, WE SHALL DIE TOGETHER.\n"
 						+ "As his voice grows faint, everything becomes dark\n"
 						+ "YOU LOSE\n"
 						+ "HUMANITY WINS\n");
