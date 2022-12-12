@@ -357,11 +357,11 @@ public class GUI
 				{
 					timer.stop();
 					textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
-							+ "�HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
-							+ "MY CHILD, I�M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
-							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.�\n"
-							+ "“HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
-							+ "MY CHILD, I’M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+							+ "ï¿½HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+							+ "MY CHILD, Iï¿½M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.ï¿½\n"
+							+ "â€œHAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+							+ "MY CHILD, Iâ€™M SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
 							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.\n"
 							+ "As his voice grows faint, everything becomes dark\n"
 							+ "YOU LOSE\n"
@@ -470,7 +470,7 @@ public class GUI
 				textArea.setText("Dates and times are important, think twice about\n" 
 				+"your findings and you may be surprised\n"
 				+"Hmm what can be so important about this date?\n"
-				+"March 14th, 3/14, a 3 digit number….\n"
+				+"March 14th, 3/14, a 3 digit numberâ€¦.\n"
 				+"Time is running out, beat it or prepare for your demise");
 				enterKitchen.setVisible(true);
 	
@@ -546,7 +546,7 @@ public class GUI
 //						+ "Dates and times are important, think twice \n"
 //						+ "about your findings and you may be surprised. \n"
 //						+ "Hmm what can be so important about this date? \n"
-//						+ "March 14th, 3/14, a 3 digit number�\n"
+//						+ "March 14th, 3/14, a 3 digit numberï¿½\n"
 //						+ "Time is running out, beat it or prepare for your demise\n");
 //				enterPin.setVisible(true);
 //
@@ -566,7 +566,7 @@ public class GUI
 //						+ "Dates and times are important, think twice \n"
 //						+ "about your findings and you may be surprised. \n"
 //						+ "Hmm what can be so important about this date? \n"
-//						+ "March 14th, 3/14, a 3 digit number�\n"
+//						+ "March 14th, 3/14, a 3 digit numberï¿½\n"
 //						+ "Time is running out, beat it or prepare for your demise\n");
 //				enterPin.setVisible(true);
 //			}
