@@ -24,7 +24,7 @@ public class GUI
 {
 	JFrame window;
 	JPanel centerPanel, bottomPanel, textPanel, choicePanel, statsPanel, commentPanel,buttonPanel;
-	JPanel imagePanel, imagePanel2, imagePanel3, imagePanel4, imagePanel5, imagePanel6, imagePanel7, imagePanel8, imagePanel9, imagePanel10, imagePanel11;
+	JPanel imagePanel, imagePanel1, imagePanel2, imagePanel3, imagePanel4, imagePanel5, imagePanel6, imagePanel7, imagePanel8, imagePanel9, imagePanel10, imagePanel11;
 	JLabel title, timerLabel, timerCount, healthLabel, healthCount, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, pinLabel;
 	JTextField txt1;
 	JButton startButton, move1, move2, viewCouch, skipCouch, enterKitchen, viewDrawer, readSheet, pickUpBook, enterPin, viewPaper;
@@ -133,27 +133,16 @@ public class GUI
 		imagePanel= new JPanel();
 		imagePanel.add(img2);
 		imagePanel.setBackground(Color.black);
+		
+		//image panel 1
+		imagePanel1 = new JPanel();
+		imagePanel1.add(img1);
+		imagePanel1.setBackground(Color.black);
+		
 		//image panel 2 (LR)
 		imagePanel2 = new JPanel();
 		imagePanel2.add(img3);
 		imagePanel2.setBackground(Color.black);
-
-		//image panel 3
-//		imagePanel3 = new JPanel();
-//		imagePanel3.add(img4);
-//		imagePanel3.setBackground(Color.black);
-//		//image panel 4
-//		imagePanel4 = new JPanel();
-//		imagePanel4.add(img5);
-//		imagePanel4.setBackground(Color.black);
-//		//image panel 5
-//		imagePanel5 = new JPanel();
-//		imagePanel5.add(img6);
-//		imagePanel5.setBackground(Color.black);
-//		//image panel 5
-//		imagePanel6 = new JPanel();
-//		imagePanel6.add(img7);
-//		imagePanel6.setBackground(Color.black);
 
 		//image panel 3 (COUCH)
 		imagePanel3 = new JPanel();
@@ -172,27 +161,6 @@ public class GUI
 		imagePanel6.add(img7);
 		imagePanel6.setBackground(Color.black);
 
-//		//image panel 2
-//		imagePanel7 = new JPanel();
-//		imagePanel7.add(img8);
-//		imagePanel7.setBackground(Color.black);
-//		//image panel 3
-//		imagePanel8 = new JPanel();
-//		imagePanel8.add(img9);
-//		imagePanel8.setBackground(Color.black);
-//		//image panel 4
-//		imagePanel9 = new JPanel();
-//		imagePanel9.add(img10);
-//		imagePanel9.setBackground(Color.black);
-//		//image panel 5
-//		imagePanel10 = new JPanel();
-//		imagePanel10.add(img11);
-//		imagePanel10.setBackground(Color.black);
-//		//image panel 5
-//		imagePanel11 = new JPanel();
-//		imagePanel11.add(img12);
-//		imagePanel11.setBackground(Color.black);
-
 		//image panel 7 (DRAWER)
 		imagePanel7 = new JPanel();
 		imagePanel7.add(img8);
@@ -209,6 +177,7 @@ public class GUI
 		imagePanel10 = new JPanel();
 		imagePanel10.add(img11);
 		imagePanel10.setBackground(Color.black);
+	
 
 		///// Title Screen /////
 		//creating custom fonts to use
@@ -605,8 +574,11 @@ public class GUI
 			if(e.getSource() == enterPin) 
 			{
 				window.remove(imagePanel7);
+				window.remove(imagePanel8);
 				window.add(imagePanel9);
-				bottomPanel.add(textArea);
+				imagePanel9.add(textArea);
+//				
+//				bottomPanel.add(textArea);
 				
 				textArea.setVisible(false);
 				pin.setEditable(true);
@@ -628,7 +600,12 @@ public class GUI
 		{
 			userPin = Integer.parseInt(pin.getText());
 			
-			if(userPin == correctPin) {
+			if(userPin == correctPin) 
+			{
+				window.remove(imagePanel9);
+				window.add(imagePanel10);
+				imagePanel10.add(textArea);
+				
 				textArea.setFont(textFont1);
 				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: NO COME BACK!\n"
 						+ "As the door opens the child runs fast. As the house shrinks in \n"
@@ -646,11 +623,16 @@ public class GUI
 						+ "HUMANITY LOSES \n");
 				
 				textArea.setVisible(true);
-				System.out.println("check2");
+				pinLabel.setVisible(false);
+				pin.setVisible(false);
 			}
 			
 			if(userPin != correctPin) 
 			{
+				window.remove(imagePanel9);
+				window.add(centerPanel);
+				centerPanel.add(textArea);
+				
 				textArea.setFont(textFont1);
 				textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
 						+ "HAHAHA, YOU COULD NEVER ESCAPE ME! \n"
@@ -660,7 +642,9 @@ public class GUI
 						+ "YOU LOSE\n"
 						+ "HUMANITY WINS\n");
 				textArea.setVisible(true);	
-				System.out.println("check1");
+				pinLabel.setVisible(false);
+				pin.setVisible(false);
+				enterPin.setVisible(false);
 			}
 			
 		}
