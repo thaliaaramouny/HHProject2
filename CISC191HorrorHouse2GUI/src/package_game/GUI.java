@@ -16,7 +16,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
-
 import java.text.DecimalFormat;//new
 import java.sql.Time;//new
 import javax.swing.Timer;//new
@@ -34,8 +33,7 @@ public class GUI
 	JTextField pin; //for pin
 	Font titleFont, headerFont, buttonFont;
 	Font textFont, textFont1, textFont2;
-//JTextField text = new JTextField(20);
-    ImageIcon icon, icon1, newImage, image;
+      ImageIcon icon, icon1, newImage, image;
 //this is all for the Timer
 	Timer timer;
     int second, minute;
@@ -92,9 +90,7 @@ public class GUI
 		second =0;
 		minute =3;
 		statsPanel.add(timerCount);
-		timerCount.setText("03:00");//new
-		second = 0; //new
-		minute = 3; //new
+		
 		
 		/////IMAGES/////
 		//another change
@@ -131,9 +127,7 @@ public class GUI
 		//Win Screen 
 		img11 = new JLabel();
 		img11.setIcon(new ImageIcon("Images/WinScreen.png"));
-		
-		
-		
+
 		
 		//image panel1 (FD)
 		imagePanel= new JPanel();
@@ -143,6 +137,24 @@ public class GUI
 		imagePanel2 = new JPanel();
 		imagePanel2.add(img3);
 		imagePanel2.setBackground(Color.black);
+
+		//image panel 3
+//		imagePanel3 = new JPanel();
+//		imagePanel3.add(img4);
+//		imagePanel3.setBackground(Color.black);
+//		//image panel 4
+//		imagePanel4 = new JPanel();
+//		imagePanel4.add(img5);
+//		imagePanel4.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel5 = new JPanel();
+//		imagePanel5.add(img6);
+//		imagePanel5.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel6 = new JPanel();
+//		imagePanel6.add(img7);
+//		imagePanel6.setBackground(Color.black);
+
 		//image panel 3 (COUCH)
 		imagePanel3 = new JPanel();
 		imagePanel3.add(img4);
@@ -159,6 +171,28 @@ public class GUI
 		imagePanel6 = new JPanel();
 		imagePanel6.add(img7);
 		imagePanel6.setBackground(Color.black);
+
+//		//image panel 2
+//		imagePanel7 = new JPanel();
+//		imagePanel7.add(img8);
+//		imagePanel7.setBackground(Color.black);
+//		//image panel 3
+//		imagePanel8 = new JPanel();
+//		imagePanel8.add(img9);
+//		imagePanel8.setBackground(Color.black);
+//		//image panel 4
+//		imagePanel9 = new JPanel();
+//		imagePanel9.add(img10);
+//		imagePanel9.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel10 = new JPanel();
+//		imagePanel10.add(img11);
+//		imagePanel10.setBackground(Color.black);
+//		//image panel 5
+//		imagePanel11 = new JPanel();
+//		imagePanel11.add(img12);
+//		imagePanel11.setBackground(Color.black);
+
 		//image panel 7 (DRAWER)
 		imagePanel7 = new JPanel();
 		imagePanel7.add(img8);
@@ -175,7 +209,6 @@ public class GUI
 		imagePanel10 = new JPanel();
 		imagePanel10.add(img11);
 		imagePanel10.setBackground(Color.black);
-
 
 		///// Title Screen /////
 		//creating custom fonts to use
@@ -258,7 +291,7 @@ public class GUI
 		enterKitchen.setForeground(Color.red);
 		enterKitchen.setVisible(false);
 		bottomPanel.add(enterKitchen);
-		
+
 		//BUTTON 6
 		viewDrawer = new JButton("View Drawer");
 		viewDrawer.setBackground(Color.black);
@@ -275,6 +308,8 @@ public class GUI
 		readSheet.setVisible(false);
 		bottomPanel.add(readSheet);
 		
+		//BUTTON 7
+		
 		//BUTTON 8
 		pickUpBook = new JButton("Pick up book");
 		pickUpBook.setBackground(Color.black);
@@ -282,6 +317,8 @@ public class GUI
 		pickUpBook.setForeground(Color.red);
 		pickUpBook.setVisible(false);
 		bottomPanel.add(pickUpBook);
+		
+		//FINAL button
 		
 		//FINAL BUTTON
 		enterPin = new JButton("ENTER PIN");
@@ -291,7 +328,7 @@ public class GUI
 		enterPin.setVisible(false);
 		bottomPanel.add(enterPin);
 		
-		//pin related stuff
+		//Components for PIN
 		correctPin = 314;
 		pinLabel = new JLabel("Enter your 3-digit code here: ");
 		pinLabel.setFont(textFont1);
@@ -313,11 +350,9 @@ public class GUI
 		readSheet.addActionListener(BL);
 		pickUpBook.addActionListener(BL);
 		enterPin.addActionListener(BL);
+
 		viewPaper.addActionListener(BL);
 		
-		//
-		
-	
 		//making window visible
 		window.setVisible(true);
 		
@@ -353,9 +388,12 @@ public class GUI
 				{
 					timer.stop();
 					textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
+							+ "ìHAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+							+ "MY CHILD, IíM SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.î\n"
 							+ "‚ÄúHAHAHA, YOU COULD NEVER ESCAPE ME! \n"
 							+ "MY CHILD, I‚ÄôM SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
-							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.‚Äù\n"
+							+ "BUT YOU RAN OUT OF TIME, WE SHALL DIE TOGETHER.\n"
 							+ "As his voice grows faint, everything becomes dark\n"
 							+ "YOU LOSE\n"
 							+ "HUMANITY WINS\n");
@@ -363,7 +401,7 @@ public class GUI
 			}
 		}
 		
-		); // <- sad winky face 
+		); 
 
 		}
 		
@@ -374,6 +412,7 @@ public class GUI
 		{
 			if (e.getSource() == startButton) 
 			{
+				//calling timer for text delay to start: txtArea.start();
 				countdownTimer();//new
 				timer.start();//new
 				window.remove(centerPanel);
@@ -404,6 +443,8 @@ public class GUI
 				
 				//text
 				textArea.setFont(textFont2);
+				
+				
 				textArea.setText("The Child walks inside.The door closes behind him.\n"
 					+"The child screams and looks around the room panicked and scared.\n"
 					+"As the child turns around he sees a keypad with the digits 1-9.\n"
@@ -498,7 +539,7 @@ public class GUI
 				//buttons
 				viewDrawer.setVisible(false);
 				readSheet.setVisible(true);
-				pickUpBook.setVisible(true);
+				//pickUpBook.setVisible(true);
 				
 				//text
 				textArea.setText("The junk drawer is filled with various books,\n"
@@ -517,16 +558,29 @@ public class GUI
 				
 				//buttons
 				readSheet.setVisible(false);
-				pickUpBook.setVisible(false);
+				enterPin.setVisible(true);
 				
-				//tex
+				//text
 				textArea.setText("Ahh, chemical compounds and using the scientific method,\n"
 						+ " nothing here for you, but you better find a digit\n"
 						+ " before you get lightheaded!\n");
 				
+				
+				
 			}
 			
-			if(e.getSource() == pickUpBook) {
+//			if(e.getSource() == pickUpBook) {
+//				pickUpBook.setVisible(false);
+//				readSheet.setVisible(false);
+//				textArea.setText("It reads'Evil Science: 1st Edition, \n"
+//						+ "Publishing date: March 14th, 1880'	\n"
+//						+ "Dates and times are important, think twice \n"
+//						+ "about your findings and you may be surprised. \n"
+//						+ "Hmm what can be so important about this date? \n"
+//						+ "March 14th, 3/14, a 3 digit numberÖ\n"
+//						+ "Time is running out, beat it or prepare for your demise\n");
+//				enterPin.setVisible(true);
+//
 //				//image
 //				window.remove(imagePanel7);
 //				window.add(imagePanel7);
@@ -546,43 +600,43 @@ public class GUI
 //						+ "March 14th, 3/14, a 3 digit numberÔøΩ\n"
 //						+ "Time is running out, beat it or prepare for your demise\n");
 //				enterPin.setVisible(true);
-			}
+//			}
 			
 			if(e.getSource() == enterPin) 
 			{
-//				window.remove(imagePanel7);
-//				window.add(imagePanel9);
-//				
-//				imagePanel.add(textArea);
-//				textArea.setVisible(false);
-//				pin.setEditable(true);
-//				pinLabel.setVisible(true);
-//				pin.setVisible(true);
-//				enterPin.setVisible(false);
-//				
+				window.remove(imagePanel7);
+				window.add(imagePanel9);
+				imagePanel.add(textArea);
+				
+				textArea.setVisible(false);
+				pin.setEditable(true);
+				pinLabel.setVisible(true);
+				pin.setVisible(true);
+				enterPin.setVisible(false);
+				
 			}
 		}
 	
 	}
 
 	
+//	textField Listener
 	private class textFieldListener implements ActionListener
 	{
 
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-			
 			userPin = Integer.parseInt(pin.getText());
-			if(userPin == correctPin) 
-			{
-
+			
+			if(userPin == correctPin) {
+				textArea.setFont(textFont1);
 				textArea.setText(" A GHOSTLY VOICE FILLS THE ROOM: ÔøΩNOOOO, COME BACK, COME BACKKKKKÔøΩ\n"
 						+ "As the door opens the child runs, and runs, runs. As the house shrinks in \n"
 						+ "the distance the sounds fade as well. Still loopy from all of the NITROUS OXIDE \n"
 						+ "emmissions, the child collapses.\n"
 						+ "1 WEEK LATER\n"
-						+ "As the childÔøΩs eyes slowly open he saw the room filled \n"
+						+ "As the childís eyes slowly open he saw the room filled \n"
 						+ "with flowers and get-well cards. In the chair beside him,\n"
 						+ " he saw his mom slumped over. He just watched as she slept peacefully beside him.\n"
 						+ "He finally felt reassured that he was safe, \n"
@@ -594,24 +648,25 @@ public class GUI
 						+ "YOU WIN \n"
 						+ "HUMANITY LOSES \n");
 				
-				textArea.setVisible(true);	
+				textArea.setVisible(true);
+				System.out.println("check2");
 			}
 			
 			if(userPin != correctPin) 
 			{
+				textArea.setFont(textFont1);
 				textArea.setText("A GHOSTLY VOICE FILLS THE ROOM: \n"
-						+ "ÔøΩHAHAHA, YOU COULD NEVER ESCAPE ME! \n"
-						+ "MY CHILD, IÔøΩM SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
-						+ "BUT YOU MUST NEVER LEAVE, WE SHALL DIE TOGETHER.ÔøΩ\n"
+						+ "ìHAHAHA, YOU COULD NEVER ESCAPE ME! \n"
+						+ "MY CHILD, IíM SO SORRY FOR WHAT I HAVE TURNED YOU INTO, \n"
+						+ "BUT YOU MUST NEVER LEAVE, WE SHALL DIE TOGETHER.î\n"
 						+ "As his voice grows faint, everything becomes dark\n"
 						+ "YOU LOSE\n"
-						+ "HUMANITY WINS\r\n");
+						+ "HUMANITY WINS\n");
 				textArea.setVisible(true);	
+				System.out.println("check1");
 			}
-			System.out.println("check");
 			
 		}
-		{		
-		}
 	}
+
 }
