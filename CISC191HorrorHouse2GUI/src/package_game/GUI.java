@@ -595,7 +595,7 @@ public class GUI
 //						+ "Dates and times are important, think twice \n"
 //						+ "about your findings and you may be surprised. \n"
 //						+ "Hmm what can be so important about this date? \n"
-//						+ "March 14th, 3/14, a 3 digit numberï¿½\n"
+//						+ "March 14th, 3/14, a 3 digit numberï¿\n"
 //						+ "Time is running out, beat it or prepare for your demise\n");
 //				enterPin.setVisible(true);
 //			}
@@ -604,7 +604,7 @@ public class GUI
 			{
 				window.remove(imagePanel7);
 				window.add(imagePanel9);
-				imagePanel.add(textArea);
+				bottomPanel.add(textArea);
 				
 				textArea.setVisible(false);
 				pin.setEditable(true);
@@ -621,7 +621,6 @@ public class GUI
 //	textField Listener
 	private class textFieldListener implements ActionListener
 	{
-
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
