@@ -622,6 +622,7 @@ public class GUI
 						+ "YOU WIN \n"
 						+ "HUMANITY LOSES \n");
 				
+				
 				textArea.setVisible(true);
 				pinLabel.setVisible(false);
 				pin.setVisible(false);
