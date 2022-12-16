@@ -479,6 +479,7 @@ public class GUI
 			if (e.getSource() == enterKitchen)
 			{
 				//image
+				window.remove(imagePanel4);
 				window.remove(imagePanel3);
 				window.remove(imagePanel2);
 				window.add(imagePanel6);
@@ -573,8 +574,8 @@ public class GUI
 			
 			if(e.getSource() == enterPin) 
 			{
-				window.remove(imagePanel7);
 				window.remove(imagePanel8);
+				window.remove(imagePanel6);
 				window.add(imagePanel9);
 				imagePanel9.add(textArea);
 //				
@@ -618,8 +619,7 @@ public class GUI
 						+ "He finally felt reassured that he was safe, \n"					
 						+ "As the child starts to go back to sleep,\n"
 						+ " his body does not.\n"
-						+"....\n"
-						+ "YOU WIN \n"
+						+ "YOU WIN.... \n"
 						+ "HUMANITY LOSES \n");
 				
 				
@@ -646,9 +646,14 @@ public class GUI
 				pinLabel.setVisible(false);
 				pin.setVisible(false);
 				enterPin.setVisible(false);
+				startButton.setText("PLAY AGAIN");
+				startButton.setVisible(true);
+				
+				}
+				
 			}
 			
 		}
 	}
 
-}
+
