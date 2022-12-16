@@ -86,9 +86,6 @@ public class GUI
 		timerCount = new JLabel();		
 		timerCount.setFont(headerFont);
 		timerCount.setForeground(Color.white);
-		timerCount.setText("3:00");
-		second =0;
-		minute =3;
 		statsPanel.add(timerCount);
 		
 		
@@ -383,6 +380,9 @@ public class GUI
 			{
 				//calling timer for text delay to start: txtArea.start();
 				countdownTimer();//new
+				timerCount.setText("3:00");
+				second =0;
+				minute =3;
 				timer.start();//new
 				window.remove(centerPanel);
 				window.add(imagePanel);
@@ -646,6 +646,7 @@ public class GUI
 				pinLabel.setVisible(false);
 				pin.setVisible(false);
 				enterPin.setVisible(false);
+				timer.stop();
 				startButton.setText("PLAY AGAIN");
 				startButton.setVisible(true);
 				
